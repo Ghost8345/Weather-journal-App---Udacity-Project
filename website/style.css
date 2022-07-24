@@ -1,0 +1,123 @@
+body{
+    background: #1f1f1e;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#app{
+    display: grid;
+    /* grid-template-columns:  */
+    height:100vh;
+    color: #f0d43a;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    margin-left: 10px;
+}
+
+.holderHeadline{
+    margin: auto;
+}
+
+#entryHolder{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#date{
+
+}
+
+#temp{
+
+}
+
+#content{
+
+}
+
+.headline {
+
+}
+.title{
+
+}
+
+.feelInput{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+/*  Basic Styling To Override Default For Basic HTML Elements */
+label{
+    display:block;
+    font-size: 27px;
+    margin-bottom: 5px;
+}
+
+
+input{
+    display:block;
+    height: 60px;
+    width: 320px;
+    background:#e5e6e7;
+    color: #000000;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+}
+
+button{
+    margin-left: 30px;
+    background: #3b4a6b;
+    color: #f0d43a;
+    font-size: 26px;
+    font-family: 'Oswald', sans-serif;
+    border: none;
+    box-shadow: 2px 4px 5px #444;
+}
+
+button:hover{
+    background: rgb(238, 235, 235);
+    color: rgb(57, 36, 99);
+    transition: ease 0.2s all;
+    cursor: pointer;
+}
+h1{
+    font-size: 40px;
+    text-align: center;
+    margin: 0px;
+}
+
+textarea{
+    background:#e5e6e7;
+    color: #070117;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;
+}
+/* Reset style for HTML element on active to have no border*/
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+/* Style for Placeholder Text*/
+::placeholder { /* Firefox, Chrome, Opera */ 
+    color: #070117; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
+    color: #070117; 
+    font-family: 'Oswald', sans-serif;
+
+} 
+  
+::-ms-input-placeholder { /* Microsoft Edge */ 
+    color: #070117; 
+    font-family: 'Oswald', sans-serif;
+
+} 
