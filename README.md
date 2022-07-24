@@ -1,4 +1,4 @@
-# Weather-Journal App Project
+b# Weather-Journal App Project
 
 ## Overview
 This project requires you to create an asynchronous web app that uses Web API and user data to dynamically update the UI. 
@@ -23,7 +23,7 @@ The starter project can be downloaded from [here](https://github.com/udacity/fen
 
 * You will need to download the following dependencies in your terminal:
  > `npm install express` </br>
-  `npm install cors`
+  `npm install cors` </br>
   `npm install bodyParser`
 
 

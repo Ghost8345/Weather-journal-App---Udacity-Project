@@ -55,10 +55,10 @@ const postData = async (url = "", data = {}) => {
         console.log("Update: ")
         console.log(request);
         console.log(data);
-        document.getElementById("date").innerHTML = data.date;
-        document.getElementById("temp").innerHTML = data.temp;
-        document.getElementById("content").innerHTML = data.content;
-        document.getElementById("location").innerHTML = data.location;
+        document.getElementById("date").innerHTML = "Date: " + data.date;
+        document.getElementById("temp").innerHTML = "Temperature: " + data.temp;
+        document.getElementById("content").innerHTML = "Feeling: " + data.content;
+        document.getElementById("location").innerHTML = "City: " + data.location;
     }
     catch (error) {
         console.log("error", error);
