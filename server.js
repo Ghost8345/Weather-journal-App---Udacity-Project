@@ -1,5 +1,5 @@
-// Setup empty JS object to act as endpoint for all routes
-projectData = {};
+// Setup empty JS object array to act as endpoint for all routes
+projectData = [];
 
 // Require Express to run server and routes
 const express = require("express")
@@ -26,14 +26,21 @@ const server = app.listen(port, () => {
 });
 
 app.get("/all", (req, res) => {
-    res.send(projectData);
+    res.send(projectData[projectData.length-1]);
 });
 
 app.post("/generate", (req, res) => {
     console.log(req.body);
-    projectData['date'] = req.body.date;
-    projectData['temp'] = req.body.temp;
-    projectData['content'] = req.body.content;
-    projectData['location'] = req.body.location;
-    res.send(projectData);
+    const data = {
+        date: req.body.date,
+        temp: req.body.temp,
+        content: req.body.content,
+        location: req.body.location                
+    };
+    projectData.push(data);
+    console.log(projectData);
+    res.status(200).send({
+        success: true,
+        data: projectData[projectData.length-1]
+    });
 })

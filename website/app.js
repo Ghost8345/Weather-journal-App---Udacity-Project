@@ -11,8 +11,8 @@ const apiKey = "&appId=61caa58492750f6277fcc316dbb99cde&units=metric";
 let d = new Date();
 let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
 
-const getWeather = async (zip) => {
-    const res = await fetch(baseURL + zip + apiKey);
+const getWeather = async (url) => {
+    const res = await fetch(url);
     try {
         const data = await res.json();
         if(data.cod != 200){
@@ -55,10 +55,10 @@ const postData = async (url = "", data = {}) => {
         console.log("Update: ")
         console.log(request);
         console.log(data);
-        document.getElementById("date").innerHTML = "Date: " + data.date;
-        document.getElementById("temp").innerHTML = "Temperature: " + data.temp;
-        document.getElementById("content").innerHTML = "Feeling: " + data.content;
-        document.getElementById("location").innerHTML = "City: " + data.location;
+        document.getElementById("date").innerText = "Date: " + data.date;
+        document.getElementById("temp").innerText = "Temperature: " + data.temp;
+        document.getElementById("content").innerText = "Feeling: " + data.content;
+        document.getElementById("location").innerText = "City: " + data.location;
     }
     catch (error) {
         console.log("error", error);
@@ -68,11 +68,19 @@ const postData = async (url = "", data = {}) => {
 const generate = (e) => {
     e.preventDefault();
     const zip = document.querySelector("#zip").value;
-    const content = document.querySelector("#feelings").value;
-    getWeather(zip)
+    let content = document.querySelector("#feelings").value;
+    if (!content){
+      content = "No Feelings :(";
+    }
+    getWeather(baseURL + zip + apiKey)
     .then( (data) => {
-        postData(server + "/generate", {date: newDate, temp: data.main.temp.toString() + " °C", content: content, location: data.name})
-        .then( (newData) => updateUI())
+        postData(server + "/generate", {
+          date: newDate,
+          temp: data.main.temp.toString() + " °C",
+          content: content,
+          location: data.name
+        })
+        .then( (data) => updateUI())
     })
 }
 
