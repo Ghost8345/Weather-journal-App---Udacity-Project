@@ -9,7 +9,7 @@ const apiKey = "&appId=61caa58492750f6277fcc316dbb99cde&units=metric";
 
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = (d.getMonth() + 1) +'.'+ d.getDate()+'.'+ d.getFullYear();
 
 const getWeather = async (url) => {
     const res = await fetch(url);
